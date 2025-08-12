@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 100% 11%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 100% 30%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 40% 45%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 40% 90%;
+    --input: 210 40% 90%;
+    --ring: 210 40% 98%;
+    --radius: 0.5remrem;
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 210 40% 26%;
+    --sidebar-primary: 210 40% 11%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 210 40% 26%;
+    --sidebar-border: 210 40% 91%;
+    --sidebar-ring: 210 40% 98%;
+  }
+
+  .dark {
+    --background: 210 40% 4%;
+    --foreground: 210 40% 98%;
+    --card: 210 40% 4%;
+    --card-foreground: 210 40% 98%;
+    --popover: 210 40% 4%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 100% 11%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 100% 30%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 40% 15%;
+    --muted-foreground: 210 40% 64%;
+    --accent: 210 40% 15%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 40% 15%;
+    --input: 210 40% 15%;
+    --ring: 210 40% 83%;
+    --sidebar-background: 210 40% 10%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 210 100% 11%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 16%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 210 40% 16%;
+    --sidebar-ring: 210 40% 83%;
+  }
+}
+
+.text {
+  position: relative;
+}
+
+.text::after {
+  content: "حسن السعداوي"; /* نص الظل */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #015c9a; /* لون الظل */
+  z-index: -1; /* وضع الظل تحت النص الأساسي */
+  transform: translate(-4px, 2px); /* إزاحة الظل */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.floating-image {
+  position: relative;
+  animation: floatAnimation 7s infinite ease-in-out;
+}
+
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+:root {
+  /*========== Colors ==========*/
+  --first-color: #015c9a;
+  --first-color-alt: #001a38;
+  --text-color: hsl(210, 40%, 98%);
+  --body-color: hsl(210, 40%, 96%);
+}
+
+.button__text {
+  position: relative;
+}
+
+/* Loading button animation */
+@keyframes load {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1.75rem);
+  }
+}
+
+.wave_container {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  /* overflow: hidden; */
+  background-color: #56447f;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave-1 {
+  animation: animate 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+.wave-2 {
+  animation: animate2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+
+.wave-3 {
+  animation: animate 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15;
+}
+
+.wave-4 {
+  animation: animate2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
+}
+
+.courses {
+  /* margin: 40px; */
+  text-shadow: 0 1px 10px #0003;
+}
+
+.smooth {
+  transition: all 0.4s ease;
+}
+
+.shadow-large--oblique {
+  box-shadow: -5px 5px 20px #0006;
+}
+
+.text-vividCyan-600 {
+  --tw-text-opacity: 1;
+  color: rgb(25 136 128 / var(--tw-text-opacity));
+}
+
+.text-vividCyan-300 {
+  --tw-text-opacity: 1;
+  color: rgb(106 222 207 / var(--tw-text-opacity));
+}
+
+.hover-shadow:not(.not-allowed):hover {
+  box-shadow: 0 7px 10px 0 #0003;
+  transform: scale(1.03);
+}
+
+.sh {
+  box-shadow: -5px 5px 20px #0006;
+}
+
+.image {
+  background-color: #000;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.about {
+  padding: 15px 15px 20px;
+  position: relative;
+  text-align: right;
+  width: 100%;
+}
+.p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.price {
+  align-items: center;
+  background-color: #233a86;
+  border-radius: 0 0 10px 0;
+  box-shadow: 0 0 10px 2px rgba(6, 182, 212, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: row-reverse;
+  left: 0;
+  padding: 15px 25px;
+  position: absolute;
+  top: 0;
+}
+
+.dates {
+  padding: 15px 0;
+  position: relative;
+}
+
+.dates::before {
+  background-color: #e6e6e6;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  padding: 20px 0 0;
+  position: relative;
+}
+
+.btns::before {
+  background-color: #e6e6e6;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.flex-center-both {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-gradient {
+  background: linear-gradient(90deg, #0000, currentColor, currentColor);
+}
+
+.glassy {
+  --box-border: #ffffff40;
+  --back-color: #a8858511;
+  -webkit-backdrop-filter: saturate(180%) blur(5px);
+  backdrop-filter: saturate(180%) blur(5px);
+  background-color: var(--back-color);
+  border-left: 1px solid var(--box-border);
+  border-top: 1px solid var(--box-border);
+}
+
+.shadow-large {
+  box-shadow: 0 0 20px #0006;
+}
+
+.shadow-small {
+  box-shadow: 0 0 5px #0002;
+}
+
+.clr-text-primary {
+  color: #111827;
+}
+
+.bg-secondary-container {
+  background-color: #d1d5db;
+}
+
+.clr-text-secondary {
+  color: #6b7280;
+}
+
+.custom-button::before {
+  content: "";
+  position: absolute;
+  top: -4px; /* Adjusts the space around the button */
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid #ffa838; /* Border color */
+  border-radius: 9999px; /* Matches the button's shape */
+  z-index: 99; /* Places the border behind the button */
+}
+
+.font-h1 {
+  font-size: 1.5rem;
+}
